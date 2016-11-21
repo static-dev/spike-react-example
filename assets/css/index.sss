@@ -15,6 +15,15 @@ body
 ol, ul
   padding-left: 30px
 
+  & li
+
+    & a
+      color: cadetblue
+
+    &.bold a
+      font-weight: bold
+      color: blue
+
 .board-row:after
   clear: both
   content: ""
@@ -49,3 +58,7 @@ ol, ul
 
 .game-info
   margin-left: 20px
+
+button.hl
+  background: green
+  color: white
