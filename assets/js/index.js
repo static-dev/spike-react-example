@@ -15,32 +15,27 @@ class Square extends React.Component {
 
 class Board extends React.Component {
   renderSquare (i) {
+    const winner = calculateWinner(this.props.squares) || { pattern: [] }
     return (
       <Square
         value={this.props.squares[i]}
         onClick={this.props.onClick.bind(this, i)}
-        highlight={this.props.winningSquares.includes(i) ? 'hl' : ''}
+        highlight={winner.pattern.includes(i) ? 'hl' : ''}
         />
     )
   }
   render () {
     return (
       <div>
-        <div className='board-row'>
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className='board-row'>
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className='board-row'>
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div>
+        {
+          Array(3).fill(null).map((_, i) => {
+            return <div className='board-row'>
+              {this.renderSquare(i * 3)}
+              {this.renderSquare(i * 3 + 1)}
+              {this.renderSquare(i * 3 + 2)}
+            </div>
+          })
+        }
       </div>
     )
   }
@@ -95,7 +90,6 @@ class Game extends React.Component {
           <Board
             squares={current.squares}
             onClick={(i) => this.handleClick(i)}
-            winningSquares={winner ? winner.pattern : []}
           />
         </div>
         <div className='game-info'>
