@@ -1,6 +1,6 @@
-# react-playground
+# Spike React Example
 
-experimenting with react yep
+This is [the react tutorial](https://facebook.github.io/react/tutorial/tutorial.html), but you can work with it in spike instead of a codepen. Also a good basic example of how to configure spike to work with react.
 
 ## Setup
 
