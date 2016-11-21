@@ -1,0 +1,4 @@
+extends(src='layout.sgr')
+  block(name='content')
+    #errors
+    #container

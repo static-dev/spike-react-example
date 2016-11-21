@@ -1,0 +1,37 @@
+{
+  "name": "react-playground",
+  "description": "experimenting with react yep",
+  "version": "0.0.1",
+  "author": "jescalan",
+  "ava": {
+    "verbose": "true"
+  },
+  "bugs": "https://github.com/jescalan/react-playground/issues",
+  "dependencies": {
+    "babel-preset-latest": "^6.14.0",
+    "babel-preset-react": "^6.16.0",
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0",
+    "reshape-standard": "^0.4.0",
+    "spike-css-standards": "^0.1.1",
+    "spike-page-id": "^0.1.0",
+    "webpack": "^1.13.1"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "rimraf": "^2.5.4",
+    "snazzy": "^5.0.0",
+    "spike-core": "^0.12.1",
+    "standard": "^8.0.0"
+  },
+  "homepage": "https://github.com/jescalan/react-playground",
+  "main": "app.js",
+  "private": true,
+  "repository": "https://github.com/jescalan/react-playground",
+  "scripts": {
+    "lint": "standard | snazzy",
+    "precommit": "npm run lint -s",
+    "pretest": "npm run lint -s",
+    "test": "NODE_ENV=test ava"
+  }
+}
