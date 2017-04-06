@@ -1,6 +1,7 @@
 const htmlStandards = require('reshape-standard')
 const cssStandards = require('spike-css-standards')
-const jsStandards = require('babel-preset-latest')
+const jsStandards = require('babel-preset-env')
+const dynamicImport = require('babel-plugin-syntax-dynamic-import')
 const react = require('babel-preset-react')
 const pageId = require('spike-page-id')
 
@@ -11,14 +12,9 @@ module.exports = {
     css: '*(**/)*.sss'
   },
   ignore: ['**/layout.sgr', '**/_*', '**/.*', '_cache/**', 'readme.md'],
-  reshape: (ctx) => {
-    return htmlStandards({
-      webpack: ctx,
-      locals: { pageId: pageId(ctx), foo: 'bar' }
-    })
-  },
-  postcss: (ctx) => {
-    return cssStandards({ webpack: ctx })
-  },
-  babel: { presets: [jsStandards, react] }
+  reshape: htmlStandards({
+    locals: (ctx) => { return { pageId: pageId(ctx), foo: 'bar' } }
+  }),
+  postcss: cssStandards(),
+  babel: { presets: [[jsStandards, { modules: false }], react], plugins: [dynamicImport] }
 }
