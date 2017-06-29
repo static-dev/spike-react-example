@@ -6,33 +6,33 @@
   "ava": {
     "verbose": "true"
   },
-  "bugs": "https://github.com/static-dev/react-playground/issues",
+  "bugs": "https://github.com/static-dev/react-example/issues",
   "dependencies": {
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "babel-preset-env": "^1.1.8",
-    "babel-preset-react": "^6.23.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
-    "reshape-standard": "^1.0.0",
-    "spike-css-standards": "^1.0.0",
-    "spike-page-id": "^1.0.0",
-    "webpack": "^2.3.3"
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "reshape-standard": "^1.2.0",
+    "spike-css-standards": "^2.0.1",
+    "spike-js-standards": "^2.0.2",
+    "webpack": "^2.6.1"
   },
   "devDependencies": {
-    "ava": "^0.19.0",
+    "ava": "^0.20.0",
     "rimraf": "^2.6.1",
-    "snazzy": "^6.0.0",
-    "spike-core": "^1.0.0",
-    "standard": "^10.0.0"
+    "snazzy": "^7.0.0",
+    "spike-core": "^1.3.1",
+    "standard": "^10.0.2"
   },
-  "homepage": "https://github.com/static-dev/react-playground",
+  "homepage": "https://github.com/static-dev/react-example",
   "main": "app.js",
   "private": true,
-  "repository": "https://github.com/static-dev/react-playground",
+  "repository": "https://github.com/static-dev/react-example",
   "scripts": {
     "lint": "standard | snazzy",
     "precommit": "npm run lint -s",
     "pretest": "npm run lint -s",
-    "test": "NODE_ENV=test ava"
+    "test": "NODE_ENV=test ava",
+    "start": "spike watch",
+    "build": "spike compile"
   }
 }
